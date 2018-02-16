@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class PlayerController : MonoBehaviour {
 
@@ -9,6 +10,8 @@ public class PlayerController : MonoBehaviour {
 	public float speed;
 	public float xMin, xMax, zMin, zMax;
 	public GameObject asteroidGameObject;
+
+	public KeyCode dieKey = KeyCode.Space;
 
 	// Use this for initialization
 	void Start () {
@@ -35,6 +38,16 @@ public class PlayerController : MonoBehaviour {
 		);
 		//rbAsteroid.angularVelocity = movement*speed*Time.deltaTime;
 	//	Debug.Log (rbAsteroid.velocity);
-		Debug.Log (asteroidGameObject.transform.localRotation);
+		//Debug.Log (asteroidGameObject.transform.localRotation);
 	}
+
+
+	void Update () {
+		if (Input.GetKey(dieKey)){
+			SceneManager.LoadScene ("Scene02");
+
+	}
+
 }
+}
+
