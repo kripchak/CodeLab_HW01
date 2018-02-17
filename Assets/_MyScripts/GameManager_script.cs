@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using System.IO;
 
 
 public class GameManager_script : MonoBehaviour {
@@ -34,6 +35,10 @@ public class GameManager_script : MonoBehaviour {
 		Instantiate(ship, position, Quaternion.identity);
 		position = new Vector3(Random.Range(xMin, xMax), 2, Random.Range(zMin, zMax));
 		Instantiate(ship, position, Quaternion.identity);
+
+		//File.WriteAllText (Application.persistentDataPath +Path.DirectorySeparatorChar + "Save_data.txt", "THIS IS A TEST");
+
+
 	
 	}
 	

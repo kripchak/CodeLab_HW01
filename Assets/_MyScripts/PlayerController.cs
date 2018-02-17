@@ -33,7 +33,7 @@ public class PlayerController : MonoBehaviour {
 
 		rbPlayer.position = new Vector3 (
 			Mathf.Clamp (rbPlayer.position.x, xMin, xMax),
-			0.0f,
+			2.0f,
 			Mathf.Clamp (rbPlayer.position.z, zMin, zMax)
 		);
 		//rbAsteroid.angularVelocity = movement*speed*Time.deltaTime;

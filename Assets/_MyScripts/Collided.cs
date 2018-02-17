@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class Collided : MonoBehaviour {
 
-	public Collider playerCollider;
+	//public Collider playerCollider;
 
 	private Collider shipCollider;
 
@@ -12,7 +12,7 @@ public class Collided : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
-		shipCollider = GetComponent<MeshCollider>();
+		shipCollider = GetComponent<CapsuleCollider>();
 		
 	}
 	
@@ -26,8 +26,12 @@ public class Collided : MonoBehaviour {
 	}
 
 
-	void OnTriggerEnter(Collider otherCollider) {
-		Destroy (gameObject);
+	void OnTriggerEnter(Collider collision)
+	{
+		GameManager_script.instance.score += 1;
+
+		Destroy(gameObject);
+		Debug.Log ("Collision!");
 	}
 
 }

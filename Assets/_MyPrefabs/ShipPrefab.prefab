@@ -22,8 +22,8 @@ GameObject:
   - component: {fileID: 33116313623554542}
   - component: {fileID: 23071015244207764}
   - component: {fileID: 54177649802287014}
-  - component: {fileID: 64130391309528932}
   - component: {fileID: 114538513376455694}
+  - component: {fileID: 136071755076151954}
   m_Layer: 0
   m_Name: ShipPrefab
   m_TagString: Untagged
@@ -38,7 +38,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1760490614581102}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 5.15, y: 2.16, z: -0.35}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -100,21 +100,7 @@ Rigidbody:
   m_IsKinematic: 0
   m_Interpolate: 0
   m_Constraints: 0
-  m_CollisionDetection: 0
---- !u!64 &64130391309528932
-MeshCollider:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1760490614581102}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 1
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Convex: 1
-  m_CookingOptions: 14
-  m_SkinWidth: 0.01
-  m_Mesh: {fileID: 4300002, guid: 5282f20eba4d44213820e21af8481932, type: 3}
+  m_CollisionDetection: 1
 --- !u!114 &114538513376455694
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -126,3 +112,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f8b397e9c946f49739704bb915a887ff, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  blowUp: 13
+--- !u!136 &136071755076151954
+CapsuleCollider:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1760490614581102}
+  m_Material: {fileID: 13400000, guid: 9f93f63d068b08c459038c40fce897d8, type: 2}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  m_Radius: 0.32
+  m_Height: 1.44
+  m_Direction: 2
+  m_Center: {x: 0.0006894469, y: -0.0045119673, z: 0}
