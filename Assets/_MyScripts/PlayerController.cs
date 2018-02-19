@@ -13,12 +13,12 @@ public class PlayerController : MonoBehaviour {
 
 	public KeyCode dieKey = KeyCode.Space;
 
+
 	// Use this for initialization
 	void Start () {
 
 		rbPlayer = GetComponent<Rigidbody> ();
 		rbAsteroid = asteroidGameObject.GetComponent<Rigidbody> ();
-
 		
 	}
 	
@@ -30,24 +30,18 @@ public class PlayerController : MonoBehaviour {
 
 		rbPlayer.velocity = movement*speed*Time.deltaTime;
 
-
 		rbPlayer.position = new Vector3 (
 			Mathf.Clamp (rbPlayer.position.x, xMin, xMax),
 			2.0f,
 			Mathf.Clamp (rbPlayer.position.z, zMin, zMax)
 		);
-		//rbAsteroid.angularVelocity = movement*speed*Time.deltaTime;
-	//	Debug.Log (rbAsteroid.velocity);
-		//Debug.Log (asteroidGameObject.transform.localRotation);
-	}
-
-
-	void Update () {
-		if (Input.GetKey(dieKey)){
-			SceneManager.LoadScene ("Scene02");
 
 	}
 
+
+
+
 }
-}
+
+
 

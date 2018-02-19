@@ -4,7 +4,6 @@ using UnityEngine;
 
 public class Collided : MonoBehaviour {
 
-	//public Collider playerCollider;
 
 	private Collider shipCollider;
 
@@ -26,11 +25,12 @@ public class Collided : MonoBehaviour {
 	}
 
 
-	void OnTriggerEnter(Collider collision)
+	void OnTriggerEnter ( )
 	{
 		GameManager_script.instance.score += 1;
 
-		Destroy(gameObject);
+
+			Destroy(gameObject);
 		Debug.Log ("Collision!");
 	}
 

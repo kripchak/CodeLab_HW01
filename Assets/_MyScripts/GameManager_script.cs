@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using System.IO;
+using UnityEngine.SceneManagement;
 
 
 public class GameManager_script : MonoBehaviour {
@@ -9,12 +10,16 @@ public class GameManager_script : MonoBehaviour {
 	public static GameManager_script instance = null;
 
 	public int score = 0;
+	public int goalScore = 4;
+	public int numberOfShips = 8;
 
 	public GameObject ship;
 	public float xMin, xMax, zMin, zMax;
 
 	public KeyCode upKey = KeyCode.UpArrow;
+	public KeyCode dieKey = KeyCode.Return;
 
+	private Vector3 position;
 
 
 	// Use this for initialization
@@ -29,16 +34,16 @@ public class GameManager_script : MonoBehaviour {
 			Destroy (gameObject);
 		}
 		
-		Vector3 position = new Vector3(Random.Range(xMin, xMax), 2, Random.Range(zMin, zMax));
-		Instantiate(ship, position, Quaternion.identity);
-		position = new Vector3(Random.Range(xMin, xMax), 2, Random.Range(zMin, zMax));
-		Instantiate(ship, position, Quaternion.identity);
-		position = new Vector3(Random.Range(xMin, xMax), 2, Random.Range(zMin, zMax));
-		Instantiate(ship, position, Quaternion.identity);
+		for (int i = 1; i <= numberOfShips; i++) {
 
-		//File.WriteAllText (Application.persistentDataPath +Path.DirectorySeparatorChar + "Save_data.txt", "THIS IS A TEST");
+			position = new Vector3 (Random.Range (xMin, xMax), 2, Random.Range (zMin, zMax));
+			Instantiate (ship, position, Quaternion.identity);
+			//Debug.Log ("Here " + i);
 
 
+			//File.WriteAllText (Application.persistentDataPath +Path.DirectorySeparatorChar + "Save_data.txt", "THIS IS A TEST");
+
+		}
 	
 	}
 	
@@ -49,5 +54,15 @@ public class GameManager_script : MonoBehaviour {
 			instance.score++;
 		}
 
+		if (Input.GetKey(dieKey)){
+			SceneManager.LoadScene ("Scene02");
+
+		}
+
+
 	}
+
+
+
+
 }
