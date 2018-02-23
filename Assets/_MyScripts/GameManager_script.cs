@@ -12,6 +12,8 @@ public class GameManager_script : MonoBehaviour {
 	public int score = 0;
 	public int goalScore = 4;
 	public int numberOfShips = 8;
+	public float time = 0.0f;
+	public float bestTime = 20.0f; 
 
 	public GameObject ship;
 	public float xMin, xMax, zMin, zMax;
@@ -20,6 +22,7 @@ public class GameManager_script : MonoBehaviour {
 	public KeyCode dieKey = KeyCode.Return;
 
 	private Vector3 position;
+	private float startTime = 0.0f;
 
 
 	// Use this for initialization
@@ -30,6 +33,7 @@ public class GameManager_script : MonoBehaviour {
 			DontDestroyOnLoad (gameObject);
 		} else {
 			instance.score = 0;
+			instance.startTime = Time.time;
 
 			Destroy (gameObject);
 		}
@@ -39,13 +43,39 @@ public class GameManager_script : MonoBehaviour {
 			position = new Vector3 (Random.Range (xMin, xMax), 2, Random.Range (zMin, zMax));
 			Instantiate (ship, position, Quaternion.identity);
 			//Debug.Log ("Here " + i);
-
+		}
 
 			//File.WriteAllText (Application.persistentDataPath +Path.DirectorySeparatorChar + "Save_data.txt", "THIS IS A TEST");
+		string fullFilePath = Application.dataPath + Path.DirectorySeparatorChar + "SaveData.txt";
+		if (File.Exists (fullFilePath)) {
+			string bestTimeString = File.ReadAllText (fullFilePath);
+			//bestTime = float.Parse (bestTimeString);
+			Debug.Log ("does exist");
+		} else {
+			Debug.Log ("does not exist");
+		}
+
+
 
 		}
-	
+
+
+
+		public void endGame() {
+		time = Time.time - startTime;
+
+			if (time < bestTime ) {
+				bestTime = time ;
+
+			string fullFilePath = Application.dataPath + Path.DirectorySeparatorChar + "SaveData.txt";
+			File.WriteAllText (fullFilePath, bestTime.ToString ());
+		}
+		SceneManager.LoadScene ("Scene02");
 	}
+
+
+
+
 	
 	// Update is called once per frame
 	void Update () {
