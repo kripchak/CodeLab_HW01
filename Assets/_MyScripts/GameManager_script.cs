@@ -40,8 +40,8 @@ public class GameManager_script : MonoBehaviour {
 		
 		for (int i = 1; i <= numberOfShips; i++) {
 
-			position = new Vector3 (Random.Range (xMin, xMax), 2, Random.Range (zMin, zMax));
-			Instantiate (ship, position, Quaternion.identity);
+		//	position = new Vector3 (Random.Range (xMin, xMax), 2, Random.Range (zMin, zMax));
+		//	Instantiate (ship, position, Quaternion.identity);
 			//Debug.Log ("Here " + i);
 		}
 

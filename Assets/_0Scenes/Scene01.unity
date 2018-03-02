@@ -369,11 +369,57 @@ Transform:
   m_GameObject: {fileID: 574134539}
   m_LocalRotation: {x: 0.7071068, y: 0, z: 0, w: 0.7071068}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 40.24, y: 80.48, z: 1}
+  m_LocalScale: {x: 80, y: 160, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 90, y: 0, z: 0}
+--- !u!1 &661724187
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 661724189}
+  - component: {fileID: 661724188}
+  m_Layer: 0
+  m_Name: LevelCreator_obj
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &661724188
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 661724187}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 080d4ba209c5ee54ea0573a0c190b08e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  xStart: 0
+  xStep: 10
+  zStart: 10
+  zStep: 0
+  player: {fileID: 916582123}
+  enemy: {fileID: 1760490614581102, guid: a89fc8fce4602483c88f3087795c48a9, type: 2}
+--- !u!4 &661724189
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 661724187}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 8
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &902078648
 GameObject:
   m_ObjectHideFlags: 0
@@ -550,10 +596,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 500
-  xMin: -20
-  xMax: 20
-  zMin: -40
-  zMax: 40
+  xMin: -40
+  xMax: 40
+  zMin: -80
+  zMax: 80
   asteroidGameObject: {fileID: 916582123}
   dieKey: 32
 --- !u!1 &964717591
@@ -732,11 +778,13 @@ MonoBehaviour:
   score: 0
   goalScore: 4
   numberOfShips: 10
+  time: 0
+  bestTime: 20
   ship: {fileID: 1760490614581102, guid: a89fc8fce4602483c88f3087795c48a9, type: 2}
-  xMin: -20
-  xMax: 20
-  zMin: -40
-  zMax: 40
+  xMin: -40
+  xMax: 40
+  zMin: -80
+  zMax: 80
   upKey: 273
   dieKey: 13
 --- !u!1 &1937272528
