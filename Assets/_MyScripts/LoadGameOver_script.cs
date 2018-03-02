@@ -21,7 +21,7 @@ public class LoadGameOver_script : MonoBehaviour {
 	void CheckScore(){
 
 		if (GameManager_script.instance.score >= GameManager_script.instance.goalScore) {
-			GameManager_script.instance.endGame();
+			//GameManager_script.instance.endGame();
 		}
 
 	}

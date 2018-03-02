@@ -13,7 +13,7 @@ public class LevelCreation : MonoBehaviour {
 
 	float xCooord , zCoord ;
 	char theChar;
-	Vector3 position;
+	private Vector3 position;
 	string levelString;
 	string[] levelRows;
 
@@ -22,15 +22,24 @@ public class LevelCreation : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
-		levelString = File.ReadAllText("LevelData.txt");
+
+		string fullFilePath = Application.dataPath + Path.DirectorySeparatorChar + "LevelData.txt";
+		if (File.Exists (fullFilePath)) {
+			levelString = File.ReadAllText (fullFilePath);
+			//bestTime = float.Parse (bestTimeString);
+			Debug.Log ("LevelData does exist");
+		} else {
+			Debug.Log ("LevelData does not exist");
+		}
+
+		//levelString = File.ReadAllText("LevelData.txt");
 		levelRows = levelString.Split ('\n');
-	}
-	
-	// Update is called once per frame
-	void Update () {
+		//Debug.Log (levelRows[5].Length);
+
 		for (int i = 0; i < levelRows.Length; i++) {
-			for (int j = 0; j < levelRows [i].Length; j++) {
-				theChar = levelRows [i] [j];
+			for (int j = 0; j < levelRows[i].Length; j++) {
+				theChar = levelRows[i] [j];
+				Debug.Log (levelRows[i][j]);
 				if (theChar == 'e') {
 					position = new Vector3 (xStart + xStep * j, 2, zStart + zStep * i);
 					Instantiate (enemy, position, Quaternion.identity);
@@ -41,5 +50,10 @@ public class LevelCreation : MonoBehaviour {
 				}
 			}
 		}
+	}
+	
+	// Update is called once per frame
+	void Update () {
+
 	}
 }

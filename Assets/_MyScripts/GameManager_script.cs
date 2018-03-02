@@ -50,9 +50,9 @@ public class GameManager_script : MonoBehaviour {
 		if (File.Exists (fullFilePath)) {
 			string bestTimeString = File.ReadAllText (fullFilePath);
 			//bestTime = float.Parse (bestTimeString);
-			Debug.Log ("does exist");
+			Debug.Log ("SaveData does exist");
 		} else {
-			Debug.Log ("does not exist");
+			Debug.Log ("SaveData does not exist");
 		}
 
 
