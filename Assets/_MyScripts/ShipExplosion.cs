@@ -2,10 +2,15 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Collided : MonoBehaviour {
+public class ShipExplosion : MonoBehaviour {
 
 
 	private Collider shipCollider;
+	private Vector3 place;
+	private AudioClip chosenAudio;
+	private int randomNumber;
+	public GameObject explosion;
+	public AudioClip explodeAudio1, explodeAudio2;
 
 	public KeyCode blowUp = KeyCode.Return;
 
@@ -25,12 +30,15 @@ public class Collided : MonoBehaviour {
 	}
 
 
-	void OnTriggerEnter ( )
+	void OnTriggerEnter (Collider other )
 	{
 		GameManager_script.instance.score += 1;
+		place = gameObject.transform.position;
+		Instantiate (explosion, this.transform);
+		AudioSource audio = GetComponent<AudioSource> ();
+		audio.Play ();
 
-
-			Destroy(gameObject);
+		//	Destroy(gameObject);
 		Debug.Log ("Collision!");
 	}
 

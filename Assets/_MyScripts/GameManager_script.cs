@@ -13,16 +13,19 @@ public class GameManager_script : MonoBehaviour {
 	public int goalScore = 4;
 	public int numberOfShips = 8;
 	public float time = 0.0f;
-	public float bestTime = 20.0f; 
+	public float bestTime = 20.0f;
+	public float bestScore = 0.0f;
+	public float startTime = 0.0f;
 
 	public GameObject ship;
 	public float xMin, xMax, zMin, zMax;
 
 	public KeyCode upKey = KeyCode.UpArrow;
 	public KeyCode dieKey = KeyCode.Return;
+	public KeyCode pressStart = KeyCode.Space;
 
 	private Vector3 position;
-	private float startTime = 0.0f;
+
 
 
 	// Use this for initialization
@@ -37,6 +40,8 @@ public class GameManager_script : MonoBehaviour {
 
 			Destroy (gameObject);
 		}
+
+
 		
 		for (int i = 1; i <= numberOfShips; i++) {
 
@@ -54,7 +59,7 @@ public class GameManager_script : MonoBehaviour {
 		} else {
 			Debug.Log ("SaveData does not exist");
 		}
-
+			
 
 
 		}
@@ -80,6 +85,10 @@ public class GameManager_script : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
 
+		//while(Scene == "Scene03"){
+		if (Input.GetKey (pressStart)) {			
+			SceneManager.LoadScene ("Scene01");
+		}
 		if (Input.GetKey(upKey)){
 			instance.score++;
 		}
@@ -88,6 +97,8 @@ public class GameManager_script : MonoBehaviour {
 			SceneManager.LoadScene ("Scene02");
 
 		}
+
+
 
 
 	}

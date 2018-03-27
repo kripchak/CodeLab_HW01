@@ -29,7 +29,8 @@ public class PlayerController : MonoBehaviour {
 		float moveVertical = Input.GetAxis ("Vertical");
 		Vector3 movement = new Vector3 (moveHorizontal, 0.0f, moveVertical);
 
-		rbPlayer.velocity = movement*speed*Time.deltaTime;
+		//rbPlayer.velocity = movement*speed*Time.deltaTime;
+		rbPlayer.AddForce(movement*speed);
 
 		rbPlayer.position = new Vector3 (
 			Mathf.Clamp (rbPlayer.position.x, xMin, xMax),

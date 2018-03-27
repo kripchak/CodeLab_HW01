@@ -24,6 +24,7 @@ GameObject:
   - component: {fileID: 54646737061425292}
   - component: {fileID: 136319009729675588}
   - component: {fileID: 114260904650385382}
+  - component: {fileID: 81925724778176162}
   m_Layer: 0
   m_Name: PlayerAsteroid
   m_TagString: Player
@@ -84,7 +85,7 @@ Camera:
   m_GameObject: {fileID: 1796346049472086}
   m_Enabled: 1
   serializedVersion: 2
-  m_ClearFlags: 2
+  m_ClearFlags: 1
   m_BackGroundColor: {r: 0.04705883, g: 0.18431373, b: 0.23137257, a: 0}
   m_NormalizedViewPortRect:
     serializedVersion: 2
@@ -175,6 +176,13 @@ AudioListener:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1796346049472086}
   m_Enabled: 1
+--- !u!81 &81925724778176162
+AudioListener:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1382030758795536}
+  m_Enabled: 1
 --- !u!114 &114260904650385382
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -186,7 +194,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2d259f46e9f0e415a898baf69e9215ff, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 500
+  speed: 10
   xMin: -40
   xMax: 40
   zMin: -80
@@ -207,7 +215,7 @@ CapsuleCollider:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1382030758795536}
   m_Material: {fileID: 13400000, guid: 9f93f63d068b08c459038c40fce897d8, type: 2}
-  m_IsTrigger: 1
+  m_IsTrigger: 0
   m_Enabled: 1
   m_Radius: 0.51450837
   m_Height: 1.6
