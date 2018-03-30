@@ -32,14 +32,17 @@ public class ShipExplosion : MonoBehaviour {
 
 	void OnTriggerEnter (Collider other )
 	{
-		GameManager_script.instance.score += 1;
-		place = gameObject.transform.position;
-		Instantiate (explosion, this.transform);
-		AudioSource audio = GetComponent<AudioSource> ();
-		audio.Play ();
+		if( other.gameObject.tag == "Player"){
+			GameManager_script.instance.score += 1;
+			place = gameObject.transform.position;
+			Instantiate (explosion, this.transform);
+			AudioSource audio = GetComponent<AudioSource> ();
+			audio.Play ();
 
-		//	Destroy(gameObject);
-		Debug.Log ("Collision!");
+				Destroy(gameObject);
+			Debug.Log ("Collision!");
+		}	
 	}
+
 
 }

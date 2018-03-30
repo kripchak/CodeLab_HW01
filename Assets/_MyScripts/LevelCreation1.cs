@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using System.IO;
 
-public class LevelCreation : MonoBehaviour {
+public class LevelCreation1 : MonoBehaviour {
 
 
 	public float xStart, xStep, zStart, zStep;
@@ -22,8 +22,6 @@ public class LevelCreation : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
-
-
 
 		string fullFilePath = Application.dataPath + Path.DirectorySeparatorChar + "LevelData.txt";
 		if (File.Exists (fullFilePath)) {

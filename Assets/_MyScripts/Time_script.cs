@@ -15,6 +15,6 @@ public class Time_script : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-		_myText.text = "Time Remaining: " + GameManager_script.instance.time;
+		_myText.text = "Time Remaining: " + GameManager_script.instance.timeRemaining;
 	}
 }
