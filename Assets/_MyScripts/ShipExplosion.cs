@@ -35,11 +35,12 @@ public class ShipExplosion : MonoBehaviour {
 		if( other.gameObject.tag == "Player"){
 			GameManager_script.instance.score += 1;
 			place = gameObject.transform.position;
-			Instantiate (explosion, this.transform);
+			var GameObject = Instantiate (explosion, this.transform.position, this.transform.rotation);
 			AudioSource audio = GetComponent<AudioSource> ();
+			Destroy(gameObject);
 			audio.Play ();
 
-				Destroy(gameObject);
+				
 			Debug.Log ("Collision!");
 		}	
 	}
