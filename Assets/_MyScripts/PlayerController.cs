@@ -11,6 +11,7 @@ public class PlayerController : MonoBehaviour {
 	public float speed;
 	public float xMin, xMax, zMin, zMax;
 	public GameObject asteroidGameObject;
+	public Vector3 hitLocation;
 
 	public KeyCode dieKey = KeyCode.Space;
 
@@ -22,12 +23,36 @@ public class PlayerController : MonoBehaviour {
 		rbAsteroid = asteroidGameObject.GetComponent<Rigidbody> ();
 		
 	}
-	
+
+	// Update is called once per frame
+	void Update () {
+
+		if (Input.GetMouseButtonDown (0)) {
+			Vector3 mouseScreenPos = Input.mousePosition;
+			mouseScreenPos.z = 0;
+			Ray mouseRay = Camera.main.ScreenPointToRay (mouseScreenPos);
+			RaycastHit hitInfo;
+			Debug.Log (mouseScreenPos);
+
+			if (Physics.Raycast (mouseRay, out hitInfo)) {
+				hitLocation = hitInfo.point;
+				Debug.Log (hitLocation);
+				Debug.Log ("hi");
+
+				//Debug.Log(hitInfo.collider);
+
+				Renderer hitRenderer = hitInfo.collider.GetComponent<Renderer> ();
+				hitRenderer.material.color = Color.red;
+			}
+		}
+	}
+
 	// Update is called once per frame
 	void FixedUpdate () {
 		float moveHorizontal = Input.GetAxis ("Horizontal");
-		float moveVertical = Input.GetAxis ("Vertical");
-		Vector3 movement = new Vector3 (moveHorizontal, 0.0f, moveVertical);
+		 float moveVertical = Input.GetAxis ("Vertical");
+		Vector3 toTarget = hitLocation - transform.position;
+		Vector3 movement = new Vector3 (toTarget.x, 0.0f, toTarget.z);
 
 		//rbPlayer.velocity = movement*speed*Time.deltaTime;
 		rbPlayer.AddForce(movement*speed);

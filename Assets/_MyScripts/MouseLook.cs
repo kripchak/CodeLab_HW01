@@ -5,7 +5,7 @@ using UnityEngine;
 public class MouseLook : MonoBehaviour {
 
 //	Renderer currentHighlightedObject = null;
-	Vector3 hitLocation;
+	public Vector3 hitLocation;
 
 	// Use this for initialization
 	void Start () {
