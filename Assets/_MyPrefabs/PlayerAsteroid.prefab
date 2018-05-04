@@ -21,7 +21,6 @@ GameObject:
   - component: {fileID: 4600403546854592}
   - component: {fileID: 33410771371319038}
   - component: {fileID: 23375394924471316}
-  - component: {fileID: 114727125474791156}
   - component: {fileID: 114392808079841890}
   m_Layer: 0
   m_Name: prop_asteroid_02
@@ -76,7 +75,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1382030758795536}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 408.95505, y: 382.47076, z: -5.392186}
+  m_LocalPosition: {x: 402.31, y: 386.00436, z: -11.03}
   m_LocalScale: {x: 1.3465685, y: 1.3465691, z: 1.3465691}
   m_Children:
   - {fileID: 4526974725910044}
@@ -91,7 +90,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1796346049472086}
   m_LocalRotation: {x: 0.7071068, y: 0, z: 0, w: 0.7071068}
-  m_LocalPosition: {x: 0, y: 18, z: 0}
+  m_LocalPosition: {x: 0, y: 12, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 4158007264240028}
@@ -274,6 +273,7 @@ MonoBehaviour:
   zMin: -80
   zMax: 80
   asteroidGameObject: {fileID: 1382030758795536}
+  hitLocation: {x: 0, y: 0, z: 0}
   dieKey: 32
 --- !u!114 &114392808079841890
 MonoBehaviour:
@@ -288,19 +288,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   rotateSpeed: 180
   rotateAxis: {x: 0, y: 1, z: 0}
---- !u!114 &114727125474791156
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1049964003803452}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2b950603695a9ac4e8d8cc75c2615a4e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  rotateSpeed: 180
-  rotateAxis: {x: 0, y: 0, z: 0}
 --- !u!124 &124814265463645832
 Behaviour:
   m_ObjectHideFlags: 1

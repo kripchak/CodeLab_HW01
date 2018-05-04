@@ -36,13 +36,11 @@ public class PlayerController : MonoBehaviour {
 
 			if (Physics.Raycast (mouseRay, out hitInfo)) {
 				hitLocation = hitInfo.point;
-				Debug.Log (hitLocation);
-				Debug.Log ("hi");
+				//Debug.Log (hitLocation);
+				//Debug.Log ("hi");
 
 				//Debug.Log(hitInfo.collider);
 
-				Renderer hitRenderer = hitInfo.collider.GetComponent<Renderer> ();
-				hitRenderer.material.color = Color.red;
 			}
 		}
 	}
